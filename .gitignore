@@ -1,16 +1,35 @@
-# Ignore Python cache
-__pycache__/
-*.pyc
+# ======================
+# Project-specific ignores
+# ======================
 
-# Ignore virtual environment
-venv/
-.env/
-*.env
-
-# Ignore large data files
+# Raw PDFs
 data/raw_pdfs/
 data/ocr_text/
+data/tmp/
+*.pdf
 
-# Ignore IDE/project files
-.vscode/
-.idea/
+# OCR results & parsed data
+data/ocr_text/
+data/intermediate/
+*.csv
+
+# Jupyter Notebook checkpoints
+*.ipynb_checkpoints
+
+# Python cache / temp files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+
+# Logs and progress files
+*.log
+*.json
+
+# System files
+.DS_Store
+Thumbs.db
