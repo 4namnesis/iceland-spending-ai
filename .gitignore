@@ -1,0 +1,16 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore virtual environment
+venv/
+.env/
+*.env
+
+# Ignore large data files
+data/raw_pdfs/
+data/ocr_text/
+
+# Ignore IDE/project files
+.vscode/
+.idea/

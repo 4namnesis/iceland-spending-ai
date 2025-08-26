@@ -1,0 +1,96 @@
+=== CSV FORMAT INSPECTION REPORT ===
+
+Total CSV files scanned: 35
+Distinct layouts detected: 14
+
+--- Layout 1 (2 files) ---
+Columns: 0, 1, 2, 3, 4, 5
+Files:
+  - 2004rikisreikningurheild.csv
+  - RRheild2000.csv
+
+--- Layout 2 (9 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+Files:
+  - 2007Rikisreikn_Heildaryfirlit.csv
+  - RR-2008-R.csv
+  - Rikisreikningur-arid-2013,-Heildaryfirlit---Rafraen-undirritun.csv
+  - Rikisreikningur-arid-2014-Heildaryfirlit-Rafraenundirritun.csv
+  - Rikisreikningur-arid-2015-Heildaryfirlit.csv
+  - Rikisreikningur-arid-2016--Heildaryfirlit.csv
+  - Rikisreikningur-heildaryfirlit-2011.csv
+  - Rikisreikningur_Heildaryfirlit_2010.csv
+  - rikisreikningur2012.csv
+
+--- Layout 3 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+Files:
+  - 2007Rikisreikn_arsreikningur_rikisadila.csv
+
+--- Layout 4 (9 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32
+Files:
+  - 2012-RR-rikisadila.csv
+  - RR-2008-arsreikningurrikisadila.csv
+  - Rikisreikn2009ArsreiknRikisadila.csv
+  - Rikisreikningur-2011-arsreikningar-rikiisadila.csv
+  - Rikisreikningur-2016-Arsreikningur-Rikisadila.csv
+  - Rikisreikningur-arid-2013-Arsreikningur-Rikisadila.csv
+  - Rikisreikningur-arid-2014-Arsreikningar-rikisadila.csv
+  - Rikisreikningur-arid-2015-Arsreikningar-rikisadila.csv
+  - Rikisreikningur_2010rikisadila.csv
+
+--- Layout 5 (1 files) ---
+Columns: 0, 1, 2, 3, 4
+Files:
+  - RR-2005-heild.csv
+
+--- Layout 6 (2 files) ---
+Columns: 0, 1, 2, 3
+Files:
+  - RR2006_arsreikningur_rikisadila.csv
+  - Rikisreikn-03.csv
+
+--- Layout 7 (3 files) ---
+Columns: 0, 1
+Files:
+  - RRheild_2006-A.csv
+  - Rikisreikningur_04072019.csv
+  - Rikisreikningur_11102018_FJS.csv
+
+--- Layout 8 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34
+Files:
+  - Rikisr-05-S.csv
+
+--- Layout 9 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8
+Files:
+  - Rikisreikn-01.csv
+
+--- Layout 10 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6
+Files:
+  - Rikisreikn-02.csv
+
+--- Layout 11 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+Files:
+  - Rikisreikn2009Heildaryfirlit.csv
+
+--- Layout 12 (2 files) ---
+Columns: 0, 1, 2
+Files:
+  - Rikisreikningur-2019.csv
+  - Rikisreikningur-2020.csv
+
+--- Layout 13 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+Files:
+  - fb_210803.csv
+
+--- Layout 14 (1 files) ---
+Columns: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+Files:
+  - fb_300904_ahj.csv
+
