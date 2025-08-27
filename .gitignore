@@ -27,3 +27,5 @@ logs/
 # Ignore large images unless specifically needed
 *.png
 !sample_page.png
+venv/
+pd
