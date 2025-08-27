@@ -1,35 +1,28 @@
-# ======================
-# Project-specific ignores
-# ======================
-
-# Raw PDFs
-data/raw_pdfs/
-data/ocr_text/
-data/tmp/
-*.pdf
-
-# OCR results & parsed data
-data/ocr_text/
-data/intermediate/
-*.csv
-
-# Jupyter Notebook checkpoints
-*.ipynb_checkpoints
-
-# Python cache / temp files
+# Ignore venv, Python garbage
+.venv/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
-# Virtual environment
-venv/
-.venv/
-
-# Logs and progress files
-*.log
-*.json
-
-# System files
+# Ignore system junk
 .DS_Store
-Thumbs.db
+
+# DO NOT ignore raw PDFs (for agent)
+# data/raw_pdfs/   <-- remove or comment out this line
+
+# Ignore OCR/image temp outputs
+data/ocr_temp/
+data/ocr_text/
+data/backups/
+
+# Keep ALL normalized, extracted, processed, structured CSVs
+
+# Ignore logs (but keep doc logs if needed)
+logs/
+!logs/README.md
+
+# Ignore notebook checkpoints
+*.ipynb_checkpoints
+
+# Ignore large images unless specifically needed
+*.png
+!sample_page.png
