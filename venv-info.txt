@@ -1,0 +1,3 @@
+cd ~/iceland-spending-ai
+source venv/bin/activate   # If your venv isn’t active yet
+python src/find_true_unknowns.py
