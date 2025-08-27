@@ -1,31 +1,66 @@
-# Ignore venv, Python garbage
+# === Python venv/cache ===
 venv/
 .venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Ignore system junk
+# === System files ===
 .DS_Store
+Thumbs.db
 
-# DO NOT ignore raw PDFs (for agent)
+# === Jupyter notebook checkpoints ===
+*.ipynb_checkpoints
 
+# === Logs and temp files ===
+logs/
+*.log
+*.bak
+*.swp
+*.swo
 
-# Ignore OCR/image temp outputs
+# === OS junk ===
+ehthumbs.db
+Desktop.ini
+
+# === AI/ML model artifacts (optional, unless you want them tracked) ===
+*.h5
+*.hdf5
+*.pth
+*.ckpt
+*.pt
+
+# === Ignore test outputs and backups ===
 data/ocr_temp/
 data/ocr_text/
 data/backups/
 
-# Keep ALL normalized, extracted, processed, structured CSVs
-
-# Ignore logs (but keep doc logs if needed)
-logs/
-!logs/README.md
-
-# Ignore notebook checkpoints
-*.ipynb_checkpoints
-
-# Ignore large images unless specifically needed
+# === Ignore large images unless needed ===
 *.png
-!sample_page.png
-venv/
-pd
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.bmp
+!sample_page.png  # (if you want to keep an example)
+
+# === Ignore old data outputs you do NOT want to track ===
+# data/structured_csvs/     # Uncomment if these are temp
+# data/processed/           # Uncomment if generated, not source
+
+# === Node/npm garbage (just in case) ===
+node_modules/
+
+# === PDF RAW DATA: TRACK THESE ===
+# DO NOT IGNORE raw PDFs! These should be committed for reproducibility.
+# If you see "data/raw_pdfs/" below, DELETE or COMMENT OUT that line.
+
+# data/raw_pdfs/   # <-- DELETE THIS LINE if present!
+
+# === Virtualenv info (just in case) ===
+venv-info.txt
+
+# === VS Code settings (optional) ===
+.vscode/
+
