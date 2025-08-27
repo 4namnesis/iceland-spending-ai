@@ -7,7 +7,7 @@ __pycache__/
 .DS_Store
 
 # DO NOT ignore raw PDFs (for agent)
-# data/raw_pdfs/   <-- remove or comment out this line
+
 
 # Ignore OCR/image temp outputs
 data/ocr_temp/
