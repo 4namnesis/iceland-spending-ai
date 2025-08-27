@@ -11,7 +11,7 @@ import argparse
 import re
 
 # ---------------------------
-# Ministry/institution filter (ICELANDIC, can be tweaked)
+# Ministry/institution filter
 # ---------------------------
 def is_ministry(val):
     if pd.isna(val): return False
@@ -19,6 +19,7 @@ def is_ministry(val):
     if not s: return False
     if len(s) > 50: return False
     if s.count(" ") > 5: return False
+    # Skip numeric-only, totals, and narrative
     if s.replace(".", "").replace(",", "").isdigit():
         return False
     if any(word in s.lower() for word in [
@@ -26,7 +27,7 @@ def is_ministry(val):
         "yfir", "yfirlit", "skiptust", "námu", "af", "hafa", "með", "á", "eða", "eru"
     ]):
         return False
-    # Require one of the following "institution" words
+    # Must contain some Icelandic word for institution/ministry
     if not re.search(r'(ráðuneyti|stofnun|skóli|ráð|stofn|háskóli|deild|dómstóll|samtök)', s, re.I):
         return False
     return True
@@ -49,7 +50,7 @@ def update_progress(log_file, filename):
 # ---------------------------
 def extract_pdf(pdf_path, output_csv):
     try:
-        # Try fast path: pdfplumber
+        # Try fast path first: pdfplumber
         with pdfplumber.open(pdf_path) as pdf:
             rows = []
             for page in pdf.pages:
@@ -59,27 +60,27 @@ def extract_pdf(pdf_path, output_csv):
                         for row in table:
                             rows.append(row)
 
+            # If pdfplumber found rows, try to filter and save
             if rows:
                 df = pd.DataFrame(rows)
-                # Guess the "Ministry" column if possible
+                # Only try to filter if "Ministry" column exists or can be guessed
+                # Attempt to rename the most likely column to "Ministry"
                 ministry_like_cols = [c for c in df.columns if "minist" in str(c).lower() or "ráðuneyti" in str(c).lower()]
                 if ministry_like_cols:
                     df.rename(columns={ministry_like_cols[0]: "Ministry"}, inplace=True)
-                # Only filter if "Ministry" exists
+                # If there's a likely "Ministry" column, filter it
                 if "Ministry" in df.columns:
-                    before = len(df)
                     df = df[df["Ministry"].apply(is_ministry)]
-                    after = len(df)
-                    print(f"  Filtered {before-after} rows in {os.path.basename(pdf_path)}")
                 df.to_csv(output_csv, index=False)
                 return True
 
         # Fallback: OCR with pytesseract (slower)
         images = convert_from_path(pdf_path, dpi=300)
         ocr_text = []
-        for i, img in enumerate(images):
+        for img in images:
             text = pytesseract.image_to_string(img)
-            ocr_text.append(f"--- PAGE {i+1} ---\n{text}")
+            ocr_text.append(text)
+
         with open(output_csv.replace(".csv", ".txt"), "w") as f:
             f.write("\n".join(ocr_text))
 
